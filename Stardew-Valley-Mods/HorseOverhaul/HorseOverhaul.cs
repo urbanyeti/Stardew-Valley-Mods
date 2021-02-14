@@ -757,7 +757,12 @@
             {
                 foreach (HorseWrapper horseWrapper in Horses)
                 {
-                    BetterRanchingApi.DrawHeartBubble(Game1.spriteBatch, horseWrapper.Horse, () => !horseWrapper.WasPet);
+                    BetterRanchingApi.DrawHeartBubble(
+                        Game1.spriteBatch,
+                        horseWrapper.Horse.Position.X,
+                        horseWrapper.Horse.Position.Y,
+                        horseWrapper.Horse.Sprite.SpriteWidth * (Config.ThinHorse ? -1 : 1),
+                        () => !horseWrapper.WasPet);
                 }
             }
 
